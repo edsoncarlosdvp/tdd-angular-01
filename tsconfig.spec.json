@@ -9,14 +9,9 @@
     "types": [
       "jasmine",
       "node"
-    ]
+    ],
+    "baseUrl": "./",
   },
-  "files": [
-    "test.ts",
-    "polyfills.ts"
-  ],
-  "include": [
-    "src/**/*.spec.ts",
-    "src/**/*.d.ts"
-  ]
+  "files": ["src/test.ts", "src/polyfills.ts"],
+  "include": ["src/**/*.spec.ts", "src/**/*.d.ts"]
 }
