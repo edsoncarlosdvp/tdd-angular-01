@@ -6,8 +6,7 @@ describe(UniqueIdService.name, () => {
   let service: UniqueIdService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(UniqueIdService);
+    service = new UniqueIdService();
   });
 
   it('should be created', () => {
@@ -41,7 +40,9 @@ describe(UniqueIdService.name, () => {
     const emptyValues = [null, undefined, '', '0', '1'];
 
     emptyValues.forEach(emptyValue => {
-      expect(() => service.generatedUniqueIdWithPrefix(emptyValue)).withContext(`Empty Value: ${emptyValue}`).toThrow();
+      expect(() => service.generatedUniqueIdWithPrefix(emptyValue))
+      .withContext(`Empty Value: ${emptyValue}`)
+      .toThrow();
     })
   })
 });
