@@ -86,10 +86,10 @@
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": ["src/styles.scss"],
             "scripts": [],
-            "include": ["src/app/**/*.spec.ts"],
+            "include": ["src/**/*.spec.ts"],
             "codeCoverage": true,
             "codeCoverageExclude": ["src/**/mocks/**", "src/**/*.stories.ts"],
-            "include": ["src/app/**/*.spec.ts"],
+            "include": ["src/**/*.spec.ts"],
             "codeCoverage": true,
             "codeCoverageExclude": ["src/**/mocks/**"]
           }

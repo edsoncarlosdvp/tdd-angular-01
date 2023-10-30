@@ -6,7 +6,7 @@ export class UniqueIdService {
 
   private numberOfGeneratedIds = 0;
 
-  public generatedUniqueIdWithPrefix(prefix: string): string {
+  public generatedUniqueIdWithPrefix(prefix: any): string {
     if(!prefix){
       throw Error('Prefix can not be empty!');
     }
