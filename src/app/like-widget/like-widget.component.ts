@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
-import { EventEmitter } from 'puppeteer';
+import { EventEmitter } from '@angular/core';
 import { UniqueIdService } from 'src/shared/services/unique-id.service';
 
 @Component({
@@ -10,21 +10,22 @@ import { UniqueIdService } from 'src/shared/services/unique-id.service';
 })
 
 export class LikeWidgetComponent implements OnInit {
-  @Output() public liked = new EventEmitter<void>();
+  @Output() public liked = new EventEmitter<boolean>();
   @Input() public likes = 0;
-  @Input() public id = null;
+  @Input() public id: string | null | undefined = null;
 
   fonts = { faThumbsUp }
 
   constructor (private uniqueIdService: UniqueIdService) {}
 
-  public like(): void {
-    this.liked.emit();
-  }
 
   public ngOnInit(): void {
-      if (!this.id) {
-        this.id = this.uniqueIdService.generatedUniqueIdWithPrefix('liked-widget');
-      }
+    if (!this.id) {
+      this.id = this.uniqueIdService.generatedUniqueIdWithPrefix('liked-widget');
+    }
+  }
+
+  public like(): void {
+    this.liked.emit();
   }
 }

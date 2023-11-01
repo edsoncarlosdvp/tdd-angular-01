@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'tdd-angular-01';
+
+  public likes = 0;
+
+  public like(): void {
+    this.likes++;
+  }
 }
