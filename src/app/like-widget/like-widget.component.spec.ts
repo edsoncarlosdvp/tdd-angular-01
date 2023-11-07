@@ -36,10 +36,10 @@ describe('LikeWidgetComponent', () => {
   });
 
   it(`#${LikeWidgetComponent.prototype.like.name} should trigger emission when called`, () => {
-    component.liked.subscribe(() => {
-      expect(true).toBeTrue();
-    });
+    const likeSpyOn = spyOn(component.liked, 'emit');
 
     component.like();
+
+    expect(likeSpyOn).toHaveBeenCalled();
   })
 });
